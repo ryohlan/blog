@@ -8,9 +8,9 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier',
     'prettier/@typescript-eslint',
-    'prettier/react',
+    'prettier/react'
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'react'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -20,11 +20,25 @@ module.exports = {
     project: './tsconfig.json'
   },
   rules: {
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/explicit-function-return-type': [0],
     '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
     '@typescript-eslint/prefer-interface': [0],
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/camelcase': [0]
+  },
+  settings: {
+    react: {
+      pragma: 'React',
+      version: 'detect'
+    },
+    propWrapperFunctions: [
+      'forbidExtraProps',
+      { property: 'freeze', object: 'Object' },
+      { property: 'myFavoriteWrapper' }
+    ],
+    linkComponents: ['Hyperlink', { name: 'Link', linkAttribute: 'to' }]
   }
 }
