@@ -5,6 +5,7 @@ export default function Page() {
   return (
     <Wrapper>
       <h1>Hello</h1>
+      <p>env: {process.env.app_env}</p>
     </Wrapper>
   )
 }
