@@ -1,4 +1,4 @@
-# cancellation_chat_form
+# next.js-template
 
 ## Development build
 ```
